@@ -21,20 +21,20 @@ child.timeout = 150
 child.logfile = sys.stdout #display progress on screen
 
 #logging in OLT IP
-time.sleep(2)
+time.sleep(0.25)
 child.expect ('Login:')  #waiting for login
 child.sendline (user) #sending login name
 child.expect('Password:') #waiting for password
 child.sendline (password) #sending password
 child.expect('>')
 
-time.sleep(3)
+time.sleep(0.5)
 
 #go up enable configuration
 child.sendline ('EN'+'\r') #going to ENABLE configuration
 child.expect('Password:') #waiting enable password
 child.sendline (password) #sending enable password 
-time.sleep(3)
+time.sleep(0.5)
 child.expect('#')
 
 
@@ -43,9 +43,10 @@ child.expect('#')
 
 
 #sending commando to copy configuration file to remote FTP server
-child.sendline('show')
+child.sendline('cd gpononu')
+child.sendline('show unauth_discovery')
 #child.sendline ('upload ftp config '+FTPSERVER+' '+ftpuser+' '+ftppassword+' '+ftpdirectory+'/bk-olt-'+HOST+'-'+mydate+'.cfg')
-time.sleep(10)
+time.sleep(5)
 
 #exiting connection
 child.expect('#')
