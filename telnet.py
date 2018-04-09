@@ -19,8 +19,11 @@ password = 'GEPON'
 child = pexpect.spawn ('telnet '+HOST) #option needs to be a list
 child.timeout = 150
 child.logfile = sys.stdout #display progress on screen
+child.logfile = "text" #display progress on screen
+
 
 #logging in OLT IP
+time.sleep(0.25)
 time.sleep(0.25)
 child.expect ('Login:')  #waiting for login
 child.sendline (user) #sending login name
