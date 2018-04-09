@@ -46,7 +46,7 @@ child.expect('#')
 child.sendline('cd gpononu')
 child.sendline('show unauth_discovery')
 #child.sendline ('upload ftp config '+FTPSERVER+' '+ftpuser+' '+ftppassword+' '+ftpdirectory+'/bk-olt-'+HOST+'-'+mydate+'.cfg')
-time.sleep(10)
+time.sleep(1)
 
 #exiting connection
 child.expect('#')
