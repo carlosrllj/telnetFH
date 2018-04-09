@@ -22,7 +22,7 @@ child.logfile = sys.stdout #display progress on screen
 
 #logging in OLT IP
 time.sleep(2)
-child.expect (('Login: ').encode('ascii')  )  #waiting for login
+child.expect ('Login:')  #waiting for login
 child.sendline (user) #sending login name
 child.expect('Password:') #waiting for password
 child.sendline (password) #sending password
