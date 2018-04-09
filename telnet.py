@@ -47,7 +47,7 @@ child.expect('#')
 
 #sending commando to copy configuration file to remote FTP server
 child.sendline('cd gpononu')
-teste = child.sendline('show unauth_discovery')
+child.sendline('show unauth_discovery')
 
 
 #child.sendline ('upload ftp config '+FTPSERVER+' '+ftpuser+' '+ftppassword+' '+ftpdirectory+'/bk-olt-'+HOST+'-'+mydate+'.cfg')
@@ -57,5 +57,3 @@ time.sleep(1)
 child.expect('#')
 child.sendline ('exit \r')
 child.sendline ('exit \r')
-
-print child.read()
